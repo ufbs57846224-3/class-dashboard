@@ -573,4 +573,6 @@ def delete_suggest(i):
 
     return redirect("/admin")
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
+
