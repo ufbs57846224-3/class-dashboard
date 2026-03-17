@@ -14,7 +14,7 @@ head = """
 
 menu = """
 <div style="background:#4CAF50;padding:15px;">
-<a href="/" style="color:white;margin:10px;">대시보드</a>
+<a href="/" style="color:white;margin:10px;">메인</a>
 <a href="/items" style="color:white;margin:10px;">준비물</a>
 <a href="/tasks" style="color:white;margin:10px;">수행평가</a>
 <a href="/exam" style="color:white;margin:10px;">기말 D-Day</a>
