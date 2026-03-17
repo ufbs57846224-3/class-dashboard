@@ -8,6 +8,10 @@ app.secret_key = "970512"
 with open("data.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
+head = """
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+"""
+
 menu = """
 <div style="background:#4CAF50;padding:15px;">
 <a href="/" style="color:white;margin:10px;">대시보드</a>
@@ -130,6 +134,27 @@ background:#2a2a2a;
 background:#2a2a2a;
 }
 
+@media (max-width:600px){
+
+.card{
+width:92%;
+padding:20px;
+}
+
+.daycard{
+width:42%;
+}
+
+.taskcard{
+font-size:14px;
+}
+
+.weekbox{
+gap:10px;
+}
+
+}
+
 </style>
 """
 
@@ -162,6 +187,8 @@ def save_data(data):
 @app.route("/")
 def dashboard():
     return f"""
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {head}
     {style}
     {script}
     {menu}
@@ -195,7 +222,7 @@ def items_page():
         """
 
     return f"""
-    {style}{script}{menu}
+    {head}{style}{script}{menu}
 
     <div class="card">
     <h2>준비물</h2>
@@ -239,7 +266,7 @@ def tasks():
         """
 
     return f"""
-    {style}{script}{menu}
+    {head}{style}{script}{menu}
 
     <div class="card">
     <h2>수행평가</h2>
@@ -265,7 +292,7 @@ def exam():
     d3 = (exam3 - today).days
 
     return f"""
-    {style}{script}{menu}
+    {head}{style}{script}{menu}
 
     <div class="card">
     <h2>기말고사 D-Day</h2>
@@ -292,7 +319,7 @@ def notice():
         """
 
     return f"""
-    {style}{script}{menu}
+    {head}{style}{script}{menu}
 
     <div class="card">
     <h2>공지사항</h2>
@@ -321,7 +348,7 @@ def suggest():
         return redirect("/suggest")
 
     return f"""
-    {style}{script}{menu}
+    {head}{style}{script}{menu}
 
     <div class="card">
     <h2>익명 건의함</h2>
@@ -453,7 +480,7 @@ def admin():
         """
 
     return f"""
-    {style}
+    {head}{style}
 
     <div class="card">
 
